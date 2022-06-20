@@ -1,9 +1,12 @@
 DUCKY_LANG CS
+REM Minimize all windows
+WINDOWS m
+DELAY 500
 GUI r
 DELAY 500
 STRING iexplore -k https://fakeupdate.net/win10ue/
 ENTER
-DELAY 200
-ALT SPACE
-REM FN F11
-REM F11
+DELAY 800
+REM Maximize fake update window
+LMOUSE
+F11
