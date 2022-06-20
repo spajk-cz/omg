@@ -1,0 +1,9 @@
+DUCKY_LANG CS
+GUI r
+DELAY 500
+STRING iexplore -k https://fakeupdate.net/win10ue/
+ENTER
+DELAY 200
+ALT SPACE
+REM FN F11
+REM F11
