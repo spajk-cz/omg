@@ -68,25 +68,12 @@ Write-Host "Antivirus: $antivirusName"
 
 Write-Host "`n" # Prázdný řádek
 
-# Draw welcome screen
-Write-Host -ForegroundColor DarkYellow "                       _oo0oo_"
-Write-Host -ForegroundColor DarkYellow "                      o8888888o"
-Write-Host -ForegroundColor DarkYellow "                      88`" . `"88"
-Write-Host -ForegroundColor DarkYellow "                      (| -_- |)"
-Write-Host -ForegroundColor DarkYellow "                      0\  =  /0"
-Write-Host -ForegroundColor DarkYellow "                    ___/`----'\___"
-Write-Host -ForegroundColor DarkYellow "                  .' \\|     |// '."
-Write-Host -ForegroundColor DarkYellow "                 / \\|||  :  |||// \"
-Write-Host -ForegroundColor DarkYellow "                / _||||| -:- |||||- \"
-Write-Host -ForegroundColor DarkYellow "               |   | \\\  -  /// |   |"
-Write-Host -ForegroundColor DarkYellow "               | \_|  ''\---/''  |_/ |"
-Write-Host -ForegroundColor DarkYellow "               \  .-\__  '-'  ___/-. /"
-Write-Host -ForegroundColor DarkYellow "             ___'. .'  /--.--\  `. .'___"
-Write-Host -ForegroundColor DarkYellow "          .`"`" '<  `.___\_<|>_/___.' >' `"`"."
-Write-Host -ForegroundColor DarkYellow "         | | :  `- \`.;`\ _ /`;.`/ - ` : | |"
-Write-Host -ForegroundColor DarkYellow "         \  \ `_.   \_ __\ /__ _/   .-` /  /"
-Write-Host -ForegroundColor DarkYellow "     =====`-.____`.___ \_____/___.-`___.-'====="
-Write-Host -ForegroundColor DarkYellow "                       `=---='"
+# Ping domů na BOIT.cz
+$CtH = Test-Connection -ComputerName "boit.cz" -Count 1
+Write-Host "Ping: $CtH"
+
+Write-Host "`n" # Prázdný řádek
+
 
 Write-Host "S pozdravem Spajk z BOIT.cz" 
 
