@@ -21,6 +21,8 @@ if (Test-Path $scriptPath) {
     Write-Host "Skript se nepodařilo stáhnout."
 }
 
+Write-Host "`n" # Prázdný řádek
+
 # Získání jména aktuálně přihlášeného uživatele
 $currentUser = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 Write-Host "Přihlášený uživatel: $currentUser"
@@ -69,8 +71,12 @@ Write-Host "Antivirus: $antivirusName"
 Write-Host "`n" # Prázdný řádek
 
 # Ping domů na BOIT.cz
-$CtH = Test-Connection -ComputerName "boit.cz" -Count 1
-Write-Host "Ping: $CtH"
+$pingResult = Test-Connection -ComputerName "boit.cz" -Count 1 -ErrorAction SilentlyContinue
+if ($pingResult) {
+    Write-Host "Ping na boit.cz: Čas odezvy - $($pingResult.ResponseTime)ms"
+} else {
+    Write-Host "Ping na boit.cz: Nebylo možné dosáhnout hostitele"
+}
 
 Write-Host "`n" # Prázdný řádek
 
@@ -78,6 +84,7 @@ Write-Host "`n" # Prázdný řádek
 Write-Host "S pozdravem Spajk z BOIT.cz" 
 
 Write-Host "`n" # Prázdný řádek
+
 Write-Host -ForegroundColor DarkYellow "      ____   ____ _____ _______ "       
 Write-Host -ForegroundColor DarkYellow "     |  _ \ / __ \_   _|__   __| "      
 Write-Host -ForegroundColor DarkYellow "     | |_) | |  | || |    | |  ___ ____"
@@ -85,3 +92,5 @@ Write-Host -ForegroundColor DarkYellow "     |  _ <| |  | || |    | | / __|_  /"
 Write-Host -ForegroundColor DarkYellow "     | |_) | |__| || |_   | || (__ / / "
 Write-Host -ForegroundColor DarkYellow "     |____/ \____/_____|  |_(_)___/___|"
 
+Write-Host "`n" # Prázdný řádek
+Write-Host "`n" # Prázdný řádek
