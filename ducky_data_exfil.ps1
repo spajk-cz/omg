@@ -7,6 +7,33 @@ $scriptPath = "C:\Windows\Temp\script.ps1"
 # Stažení skriptu
 Invoke-WebRequest -Uri $scriptUrl -OutFile $scriptPath
 
+
+Write-Host "`n" # Prázdný řádek
+
+# Draw welcome screen
+Write-Host -ForegroundColor DarkYellow "                       _oo0oo_"
+Write-Host -ForegroundColor DarkYellow "                      o8888888o"
+Write-Host -ForegroundColor DarkYellow "                      88`" . `"88"
+Write-Host -ForegroundColor DarkYellow "                      (| -_- |)"
+Write-Host -ForegroundColor DarkYellow "                      0\  =  /0"
+Write-Host -ForegroundColor DarkYellow "                    ___/`----'\___"
+Write-Host -ForegroundColor DarkYellow "                  .' \\|     |// '."
+Write-Host -ForegroundColor DarkYellow "                 / \\|||  :  |||// \"
+Write-Host -ForegroundColor DarkYellow "                / _||||| -:- |||||- \"
+Write-Host -ForegroundColor DarkYellow "               |   | \\\  -  /// |   |"
+Write-Host -ForegroundColor DarkYellow "               | \_|  ''\---/''  |_/ |"
+Write-Host -ForegroundColor DarkYellow "               \  .-\__  '-'  ___/-. /"
+Write-Host -ForegroundColor DarkYellow "             ___'. .'  /--.--\  `. .'___"
+Write-Host -ForegroundColor DarkYellow "          .`"`" '<  `.___\_<|>_/___.' >' `"`"."
+Write-Host -ForegroundColor DarkYellow "         | | :  `- \`.;`\ _ /`;.`/ - ` : | |"
+Write-Host -ForegroundColor DarkYellow "         \  \ `_.   \_ __\ /__ _/   .-` /  /"
+Write-Host -ForegroundColor DarkYellow "     =====`-.____`.___ \_____/___.-`___.-'====="
+Write-Host -ForegroundColor DarkYellow "                       `=---='"
+
+Write-Host "Spajk.cz" # Prázdný řádek
+
+Write-Host "`n" # Prázdný řádek
+
 Write-Host "Uložené Wi-Fi sítě a jejich hesla:"
 
 Write-Host "`n" # Prázdný řádek
@@ -50,7 +77,7 @@ Write-Host "Veřejná IP adresa: $publicIP"
 Write-Host "`n" # Prázdný řádek
 
 # Zjištění stavu firewallu
-$firewallStatus = Get-NetFirewallProfile | Format-Table Name, Enabled -AutoSize
+$firewallStatus = Get-NetFirewallProfile | Out-String|% Format-Table Name, Enabled -AutoSize
 Write-Host "Stav firewallu:" $firewallStatus
 
 Write-Host "`n" # Prázdný řádek
