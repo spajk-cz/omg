@@ -7,31 +7,6 @@ $scriptPath = "C:\Windows\Temp\script.ps1"
 # Stažení skriptu
 Invoke-WebRequest -Uri $scriptUrl -OutFile $scriptPath
 
-
-Write-Host "`n" # Prázdný řádek
-
-# Draw welcome screen
-Write-Host -ForegroundColor DarkYellow "                       _oo0oo_"
-Write-Host -ForegroundColor DarkYellow "                      o8888888o"
-Write-Host -ForegroundColor DarkYellow "                      88`" . `"88"
-Write-Host -ForegroundColor DarkYellow "                      (| -_- |)"
-Write-Host -ForegroundColor DarkYellow "                      0\  =  /0"
-Write-Host -ForegroundColor DarkYellow "                    ___/`----'\___"
-Write-Host -ForegroundColor DarkYellow "                  .' \\|     |// '."
-Write-Host -ForegroundColor DarkYellow "                 / \\|||  :  |||// \"
-Write-Host -ForegroundColor DarkYellow "                / _||||| -:- |||||- \"
-Write-Host -ForegroundColor DarkYellow "               |   | \\\  -  /// |   |"
-Write-Host -ForegroundColor DarkYellow "               | \_|  ''\---/''  |_/ |"
-Write-Host -ForegroundColor DarkYellow "               \  .-\__  '-'  ___/-. /"
-Write-Host -ForegroundColor DarkYellow "             ___'. .'  /--.--\  `. .'___"
-Write-Host -ForegroundColor DarkYellow "          .`"`" '<  `.___\_<|>_/___.' >' `"`"."
-Write-Host -ForegroundColor DarkYellow "         | | :  `- \`.;`\ _ /`;.`/ - ` : | |"
-Write-Host -ForegroundColor DarkYellow "         \  \ `_.   \_ __\ /__ _/   .-` /  /"
-Write-Host -ForegroundColor DarkYellow "     =====`-.____`.___ \_____/___.-`___.-'====="
-Write-Host -ForegroundColor DarkYellow "                       `=---='"
-
-Write-Host "Spajk.cz" # Prázdný řádek
-
 Write-Host "`n" # Prázdný řádek
 
 Write-Host "Uložené Wi-Fi sítě a jejich hesla:"
@@ -76,9 +51,14 @@ Write-Host "Veřejná IP adresa: $publicIP"
 
 Write-Host "`n" # Prázdný řádek
 
-# Zjištění stavu firewallu
-$firewallStatus = Get-NetFirewallProfile | Out-String|% Format-Table Name, Enabled -AutoSize
-Write-Host "Stav firewallu:" $firewallStatus
+# Zjištění statusu firewallu
+$firewallStatus = Get-NetFirewallProfile
+Write-Host "Stav firewallu:"
+foreach ($profile in $firewallStatus) {
+    Write-Host "Profil: $($profile.Name), Povoleno: $($profile.Enabled)"
+}
+Write-Host "`n" # Prázdný řádek
+
 
 Write-Host "`n" # Prázdný řádek
 
@@ -87,4 +67,34 @@ $antivirusName = Get-CimInstance -Namespace root/SecurityCenter2 -ClassName Anti
 Write-Host "Antivirus: $antivirusName"
 
 Write-Host "`n" # Prázdný řádek
+
+# Draw welcome screen
+Write-Host -ForegroundColor DarkYellow "                       _oo0oo_"
+Write-Host -ForegroundColor DarkYellow "                      o8888888o"
+Write-Host -ForegroundColor DarkYellow "                      88`" . `"88"
+Write-Host -ForegroundColor DarkYellow "                      (| -_- |)"
+Write-Host -ForegroundColor DarkYellow "                      0\  =  /0"
+Write-Host -ForegroundColor DarkYellow "                    ___/`----'\___"
+Write-Host -ForegroundColor DarkYellow "                  .' \\|     |// '."
+Write-Host -ForegroundColor DarkYellow "                 / \\|||  :  |||// \"
+Write-Host -ForegroundColor DarkYellow "                / _||||| -:- |||||- \"
+Write-Host -ForegroundColor DarkYellow "               |   | \\\  -  /// |   |"
+Write-Host -ForegroundColor DarkYellow "               | \_|  ''\---/''  |_/ |"
+Write-Host -ForegroundColor DarkYellow "               \  .-\__  '-'  ___/-. /"
+Write-Host -ForegroundColor DarkYellow "             ___'. .'  /--.--\  `. .'___"
+Write-Host -ForegroundColor DarkYellow "          .`"`" '<  `.___\_<|>_/___.' >' `"`"."
+Write-Host -ForegroundColor DarkYellow "         | | :  `- \`.;`\ _ /`;.`/ - ` : | |"
+Write-Host -ForegroundColor DarkYellow "         \  \ `_.   \_ __\ /__ _/   .-` /  /"
+Write-Host -ForegroundColor DarkYellow "     =====`-.____`.___ \_____/___.-`___.-'====="
+Write-Host -ForegroundColor DarkYellow "                       `=---='"
+
+Write-Host "S pozdravem Spajk z BOIT.cz" 
+
+Write-Host "`n" # Prázdný řádek
+Write-Host -ForegroundColor DarkYellow "      ____   ____ _____ _______ "       
+Write-Host -ForegroundColor DarkYellow "     |  _ \ / __ \_   _|__   __| "      
+Write-Host -ForegroundColor DarkYellow "     | |_) | |  | || |    | |  ___ ____"
+Write-Host -ForegroundColor DarkYellow "     |  _ <| |  | || |    | | / __|_  /"
+Write-Host -ForegroundColor DarkYellow "     | |_) | |__| || |_   | || (__ / / "
+Write-Host -ForegroundColor DarkYellow "     |____/ \____/_____|  |_(_)___/___|"
 
