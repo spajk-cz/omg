@@ -1,0 +1,11 @@
+DUCKY_LANG CS
+REM -- Tenhle scrip precte vtip - funguje na macos
+DELAY 1000
+GUI SPACE
+DELAY 500
+STRING Terminal
+ENTER
+DELAY 500
+STRING say "Upozorneni: Prave jsme obdrzeli informace o blizici se invazi mimozemstanu. Prosime vsechny, aby okamzite zalezli pod nejblizsi stul a pripravili se na zdvorile privitani nasich mezihvezdnych navstevniku. Nezapomente si s sebou vzit pocitac, abychom mohli pokracovat v nasem skoleni o etickem hackingu."
+DELAY 500
+ENTER
