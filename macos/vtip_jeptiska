@@ -1,0 +1,9 @@
+DELAY 2000
+GUI SPACE
+DELAY 200
+STRING Terminal
+DELAY 400
+ENTER
+DELAY 200
+STRING say "Prijde jeptiska do maleho kramku s potravinami a vybafne na prodavace. Lahev rumu. Prodavac ji vezme z regalu, zabali a kdyz ji podava pres pult, neda mu to, aby se nezeptal. Ja myslel, ze jeptisky nepijou. Vite, matka predstavena miva obcas zacpu a rum ji na to pomaha. Prodavac pokyva hlavou. Vecer zavre kram a jde parkem domu. Na jedne lavicce uvidi totalne ozralou jeptisku s prazdnou flaskou od rumu v ruce. Rikala jste, ze to je projimadlo pro matku predstavenou, rekne ji vycitave. Taky ze jo. Se posere, az me takhle uvidi."
+ENTER
