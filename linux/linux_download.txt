@@ -3,6 +3,10 @@ DELAY 600
 REM Linux run dialog
 ALT F2
 ENTER
+DELAY 3000
+STRING Konsole
+DELAY 500
+ENTER
 DELAY 1000
 
 REM Stáhne bash skript
