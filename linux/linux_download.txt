@@ -1,8 +1,7 @@
-DELAY 500
-REM Otevře terminál
-GUI r
-DELAY 500
-STRING gnome-terminal
+DUCKY_LANG CS
+DELAY 600
+REM Linux run dialog
+ALT F2
 ENTER
 DELAY 1000
 
